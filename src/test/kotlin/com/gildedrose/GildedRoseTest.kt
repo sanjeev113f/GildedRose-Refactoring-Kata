@@ -84,4 +84,21 @@ internal class GildedRoseTest {
 
         assertThat(expectResponse).usingRecursiveComparison().isEqualTo(app.items)
     }
+
+    @Test
+    fun `Min quality test`() {
+        val days = 15
+        val items = listOf(
+            Item("Elixir of the Mongoose", 2, 5)
+        )
+        val expectResponse = listOf(
+            Item("Elixir of the Mongoose", -13, 0)
+        )
+
+        val app = GildedRose(items)
+        for (i in 0 until days) app.updateQuality()
+
+        assertThat(expectResponse).usingRecursiveComparison().isEqualTo(app.items)
+    }
+
 }
