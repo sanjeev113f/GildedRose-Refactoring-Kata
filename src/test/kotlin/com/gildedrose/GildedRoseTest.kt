@@ -5,7 +5,6 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 internal class GildedRoseTest {
-
     @Test
     fun foo() {
         val items = listOf(Item("foo", 0, 0))
@@ -100,5 +99,4 @@ internal class GildedRoseTest {
 
         assertThat(expectResponse).usingRecursiveComparison().isEqualTo(app.items)
     }
-
 }
