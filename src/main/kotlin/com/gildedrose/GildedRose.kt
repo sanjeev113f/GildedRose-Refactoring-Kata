@@ -18,6 +18,11 @@ class GildedRose(var items: List<Item>) {
                     if (item.sellIn < 1) item.degradeQuality(item.quality)
                 }
 
+                "Conjured" -> {
+                    item.degradeQuality(2)
+                    if (item.sellIn < 1) item.degradeQuality(2)
+                }
+
                 else -> {
                     item.degradeQuality(1)
                     if (item.sellIn < 1) item.degradeQuality(1)

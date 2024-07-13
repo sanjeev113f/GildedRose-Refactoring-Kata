@@ -99,4 +99,22 @@ internal class GildedRoseTest {
 
         assertThat(expectResponse).usingRecursiveComparison().isEqualTo(app.items)
     }
+
+    @Test
+    fun `Conjured item test`() {
+        val days = 2
+        val items = listOf(
+            Item("Conjured", 2, 5)
+        )
+        val expectResponse = listOf(
+            Item("Conjured", 0, 1)
+        )
+
+        val app = GildedRose(items)
+        for (i in 0 until days) app.updateQuality()
+
+        assertThat(expectResponse).usingRecursiveComparison().isEqualTo(app.items)
+
+
+    }
 }
